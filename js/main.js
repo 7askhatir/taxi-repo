@@ -2,7 +2,6 @@ const translations = {
   en: {
     nav_home: 'Home', nav_services: 'Services', nav_routes: 'Routes & Pricing',
     nav_activities: 'Activities', nav_fleet: 'Fleet', nav_booking: 'Booking', nav_about: 'About', nav_contact: 'Contact',
-    hero_badge: '✦ Premium Transport Service',
     hero_title: 'Private Taxi & Transfers<br><span>in Morocco</span>',
     hero_subtitle: 'Reliable, safe and comfortable transfers across Morocco. Airport transfers, intercity travel and custom tours — available 24/7.',
     hero_btn_book: 'Book Now', hero_btn_whatsapp: 'WhatsApp',
@@ -71,7 +70,6 @@ const translations = {
   fr: {
     nav_home: 'Accueil', nav_services: 'Services', nav_routes: 'Tarifs & Itinéraires',
     nav_activities: 'Activités', nav_fleet: 'Flotte', nav_booking: 'Réservation', nav_about: 'À Propos', nav_contact: 'Contact',
-    hero_badge: '✦ Service de Transport Premium',
     hero_title: 'Taxi Privé & Transferts<br><span>au Maroc</span>',
     hero_subtitle: 'Transferts fiables, sûrs et confortables à travers le Maroc. Transferts aéroport, voyages interurbains et circuits sur mesure — disponibles 24h/24.',
     hero_btn_book: 'Réserver', hero_btn_whatsapp: 'WhatsApp',
@@ -140,7 +138,6 @@ const translations = {
   ar: {
     nav_home: 'الرئيسية', nav_services: 'الخدمات', nav_routes: 'المسارات والأسعار',
     nav_activities: 'الأنشطة', nav_fleet: 'الأسطول', nav_booking: 'الحجز', nav_about: 'من نحن', nav_contact: 'اتصل بنا',
-    hero_badge: '✦ خدمة نقل ممتازة',
     hero_title: 'سيارة أجرة خاصة ونقل<br><span>في المغرب</span>',
     hero_subtitle: 'نقل موثوق وآمن ومريح في جميع أنحاء المغرب. نقل المطار والسفر بين المدن والجولات السياحية - متاح 24/7.',
     hero_btn_book: 'احجز الآن', hero_btn_whatsapp: 'واتساب',
