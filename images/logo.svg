@@ -1,0 +1,16 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <defs>
+    <linearGradient id="lg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0b2b4a"/>
+      <stop offset="100%" stop-color="#1a4a6e"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="8" width="48" height="44" rx="10" fill="url(#lg)"/>
+  <path d="M10 30h28l-3-10h-22z" fill="#fff" opacity=".9"/>
+  <circle cx="14" cy="34" r="4" fill="#1a73e8"/>
+  <circle cx="34" cy="34" r="4" fill="#1a73e8"/>
+  <circle cx="14" cy="34" r="2" fill="#fff" opacity=".8"/>
+  <circle cx="34" cy="34" r="2" fill="#fff" opacity=".8"/>
+  <text x="58" y="32" font-family="Arial,sans-serif" font-weight="800" font-size="20" fill="#0b2b4a">ASKHATIR</text>
+  <text x="58" y="50" font-family="Arial,sans-serif" font-weight="600" font-size="14" fill="#1a73e8">TOURS</text>
+</svg>
