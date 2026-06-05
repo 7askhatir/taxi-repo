@@ -432,14 +432,19 @@ function openModal(e) {
   modal.classList.add('active');
   document.body.style.overflow = 'hidden';
 }
+
 function closeModal() {
   modal.classList.remove('active');
   document.body.style.overflow = '';
 }
+
 function showStep(step) {
   modalStep = step;
   document.querySelectorAll('.modal__step-content').forEach(el => {
-    el.style.display = el.dataset.step == step ? '' : 'none';
+    el.classList.toggle('active', parseInt(el.dataset.step) === step);
+    if (el.classList.contains('active')) {
+      void el.offsetWidth;
+    }
   });
   document.querySelectorAll('.modal__step').forEach(el => {
     const s = parseInt(el.dataset.step);
@@ -485,7 +490,6 @@ document.querySelector('.modal__prev')?.addEventListener('click', function() {
   showStep(1);
 });
 
-// MODAL BOOKING FORM
 document.getElementById('modalBookingForm')?.addEventListener('submit', function(e) {
   e.preventDefault();
   const formData = new FormData(this);

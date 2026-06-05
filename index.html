@@ -714,21 +714,33 @@
       </div>
     </div>
   </footer>
-  <div class="modal-overlay" id="bookingModal">
+  <div class="modal-overlay" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal">
-      <button class="modal__close" id="modalClose" aria-label="Close modal">&times;</button>
-      <div class="section__header" style="margin-bottom: 12px;">
-        <span class="section__tag" data-i18n="booking_tag">Book Online</span>
-        <h2 class="section__title" style="font-size: clamp(22px, 3vw, 30px);" data-i18n="booking_title">Book Your Transfer</h2>
+      <button class="modal__close" id="modalClose" aria-label="Close modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
+      <div class="modal__header">
+        <span class="modal__tag" data-i18n="booking_tag">Book Online</span>
+        <h2 class="modal__title" id="modalTitle" data-i18n="booking_title">Book Your Transfer</h2>
+        <p class="modal__desc" data-i18n="booking_desc">Fill in the form below and we'll confirm your booking within minutes.</p>
       </div>
       <div class="modal__steps">
-        <span class="modal__step active" data-step="1">1</span>
-        <span class="modal__step-line"></span>
-        <span class="modal__step" data-step="2">2</span>
+        <div class="modal__steps-inner">
+          <div class="modal__step active" data-step="1">
+            <span class="modal__step-circle"><span class="modal__step-num">1</span></span>
+            <span class="modal__step-label" data-i18n="modal_step1_title">Trip Details</span>
+          </div>
+          <div class="modal__step-line"></div>
+          <div class="modal__step" data-step="2">
+            <span class="modal__step-circle"><span class="modal__step-num">2</span></span>
+            <span class="modal__step-label" data-i18n="modal_step2_title">Personal Info</span>
+          </div>
+        </div>
       </div>
-      <form class="booking__form" id="modalBookingForm" style="box-shadow: none; padding: 0;">
-        <div class="modal__step-content" data-step="1">
-          <h3 class="modal__step-title" data-i18n="modal_step1_title">Trip Details</h3>
+      <form class="modal__form" id="modalBookingForm" novalidate>
+        <div class="modal__step-content active" data-step="1">
           <div class="form__row">
             <div class="form__group">
               <label for="modalBPickup" data-i18n="form_pickup">Pickup Location *</label>
@@ -765,12 +777,9 @@
             </div>
             <div class="form__group"></div>
           </div>
-          <div class="form__actions">
-            <button type="button" class="btn btn--primary btn--full modal__next" data-i18n="modal_next">Next Step</button>
-          </div>
+          <button type="button" class="btn btn--primary modal__next" data-i18n="modal_next">Next Step</button>
         </div>
-        <div class="modal__step-content" data-step="2" style="display:none;">
-          <h3 class="modal__step-title" data-i18n="modal_step2_title">Personal Information</h3>
+        <div class="modal__step-content" data-step="2">
           <div class="form__row">
             <div class="form__group">
               <label for="modalBName" data-i18n="form_name">Full Name *</label>
@@ -781,26 +790,17 @@
               <input type="tel" id="modalBPhone" name="phone" required placeholder="+212 6XX XXX XXX">
             </div>
           </div>
-          <div class="form__row">
-            <div class="form__group">
-              <label for="modalBEmail" data-i18n="form_email">Email</label>
-              <input type="email" id="modalBEmail" name="email" placeholder="your@email.com">
-            </div>
-            <div class="form__group"></div>
-          </div>
           <div class="form__group">
             <label for="modalBMessage" data-i18n="form_message">Special Requests</label>
             <textarea id="modalBMessage" name="message" rows="3" placeholder="Any special requirements..."></textarea>
           </div>
-          <div class="form__actions">
-            <div style="display:flex;gap:12px;">
-              <button type="button" class="btn btn--whatsapp modal__prev" style="flex:1;" data-i18n="modal_prev">Back</button>
-              <button type="submit" class="btn btn--primary" style="flex:2;" data-i18n="form_submit">Send Booking Request</button>
-            </div>
-            <a href="https://wa.me/212600000000?text=Hello%20Askhatir%20Tours%2C%20I%20would%20like%20to%20book%20a%20transfer." target="_blank" rel="noopener" class="btn btn--whatsapp btn--full" style="margin-top:4px;">
-              <i class="fab fa-whatsapp"></i> <span data-i18n="form_whatsapp">Book via WhatsApp</span>
-            </a>
+          <div class="modal__actions">
+            <button type="button" class="btn btn--outline modal__prev" data-i18n="modal_prev">Back</button>
+            <button type="submit" class="btn btn--primary" data-i18n="form_submit">Send Booking Request</button>
           </div>
+          <a href="https://wa.me/212600000000?text=Hello%20Askhatir%20Tours%2C%20I%20would%20like%20to%20book%20a%20transfer." target="_blank" rel="noopener" class="btn btn--whatsapp" style="margin-top:8px;">
+            <i class="fab fa-whatsapp"></i> <span data-i18n="form_whatsapp">Book via WhatsApp</span>
+          </a>
         </div>
       </form>
     </div>
