@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -27,13 +27,9 @@
       <nav class="nav" id="nav">
         <ul class="nav__list">
           <li><a href="#home" data-i18n="nav_home" class="nav__link active">Home</a></li>
-          <li><a href="#services" data-i18n="nav_services" class="nav__link">Services</a></li>
-          <li><a href="#routes" data-i18n="nav_routes" class="nav__link">Routes & Pricing</a></li>
+          <li><a href="#routes" data-i18n="nav_routes" class="nav__link">Routes & Price</a></li>
           <li><a href="#activities" data-i18n="nav_activities" class="nav__link">Activities</a></li>
-          <li><a href="#fleet" data-i18n="nav_fleet" class="nav__link">Fleet</a></li>
-          <li><a href="#" data-i18n="nav_booking" class="nav__link js-open-modal">Booking</a></li>
-          <li><a href="#about" data-i18n="nav_about" class="nav__link">About</a></li>
-          <li><a href="#contact" data-i18n="nav_contact" class="nav__link">Contact</a></li>
+          <li><a href="#about" data-i18n="nav_about" class="nav__link">About Us</a></li>
         </ul>
       </nav>
       <div class="header__actions">
@@ -147,42 +143,7 @@
         <p class="section__desc" data-i18n="routes_desc">Transparent pricing per vehicle (not per person). No hidden fees — what you see is what you pay.</p>
       </div>
       <div class="routes__list">
-        <div class="route-row animate-fade-up">
-          <div class="route-row__route">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>Essaouira</span>
-            <i class="fas fa-arrows-alt-h"></i>
-            <span>Marrakech</span>
-          </div>
-          <div class="route-row__meta">
-            <span><i class="fas fa-clock"></i> 2h30</span>
-            <span><i class="fas fa-road"></i> 175 km</span>
-          </div>
-          <div class="route-row__prices">
-            <span class="route-row__price"><span class="route-row__label" data-i18n="vehicle_sedan">Sedan</span> €70</span>
-            <span class="route-row__price"><span class="route-row__label" data-i18n="vehicle_suv">SUV</span> €90</span>
-            <span class="route-row__price"><span class="route-row__label" data-i18n="vehicle_minivan">Minivan</span> €110</span>
-          </div>
-          <a href="#" class="route-row__book btn btn--primary btn--sm js-open-modal">Book</a>
-        </div>
-        <div class="route-row animate-fade-up">
-          <div class="route-row__route">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>Essaouira</span>
-            <i class="fas fa-arrows-alt-h"></i>
-            <span>Agadir</span>
-          </div>
-          <div class="route-row__meta">
-            <span><i class="fas fa-clock"></i> 2h00</span>
-            <span><i class="fas fa-road"></i> 130 km</span>
-          </div>
-          <div class="route-row__prices">
-            <span class="route-row__price"><span class="route-row__label">Sedan</span> €60</span>
-            <span class="route-row__price"><span class="route-row__label">SUV</span> €80</span>
-            <span class="route-row__price"><span class="route-row__label">Minivan</span> €100</span>
-          </div>
-          <a href="#" class="route-row__book btn btn--primary btn--sm js-open-modal">Book</a>
-        </div>
+
         <div class="route-row animate-fade-up">
           <div class="route-row__route">
             <i class="fas fa-map-marker-alt"></i>
@@ -218,6 +179,297 @@
             <span class="route-row__price"><span class="route-row__label">Minivan</span> €40</span>
           </div>
           <a href="#" class="route-row__book btn btn--primary btn--sm js-open-modal">Book</a>
+        </div>
+        <div class="route-row animate-fade-up">
+          <div class="route-row__route">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Essaouira</span>
+            <i class="fas fa-arrows-alt-h"></i>
+            <span>Agadir</span>
+          </div>
+          <div class="route-row__meta">
+            <span><i class="fas fa-clock"></i> 2h00</span>
+            <span><i class="fas fa-road"></i> 130 km</span>
+          </div>
+          <div class="route-row__prices">
+            <span class="route-row__price"><span class="route-row__label">Sedan</span> €70</span>
+            <span class="route-row__price"><span class="route-row__label">SUV</span> €90</span>
+            <span class="route-row__price"><span class="route-row__label">Minivan</span> <a href="#" class="js-open-modal" style="color: var(--cta); font-weight: 600; font-size: 12px;">On request</a></span>
+          </div>
+          <a href="#" class="route-row__book btn btn--primary btn--sm js-open-modal">Book</a>
+        </div>
+        <div class="route-row animate-fade-up">
+          <div class="route-row__route">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Marrakech Aéroport</span>
+            <i class="fas fa-arrows-alt-h"></i>
+            <span>Marrakech Palmeraie</span>
+          </div>
+          <div class="route-row__meta">
+            <span><i class="fas fa-clock"></i> 15 min</span>
+            <span><i class="fas fa-road"></i> 8 km</span>
+          </div>
+          <div class="route-row__prices">
+            <span class="route-row__price"><span class="route-row__label">Sedan</span> €20</span>
+            <span class="route-row__price"><span class="route-row__label">SUV</span> €24</span>
+            <span class="route-row__price"><span class="route-row__label">Minivan</span> <a href="#" class="js-open-modal" style="color: var(--cta); font-weight: 600; font-size: 12px;">On request</a></span>
+          </div>
+          <a href="#" class="route-row__book btn btn--primary btn--sm js-open-modal">Book</a>
+        </div>
+        <div class="route-row animate-fade-up">
+          <div class="route-row__route">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Marrakech Aéroport</span>
+            <i class="fas fa-arrows-alt-h"></i>
+            <span>Casablanca Ville</span>
+          </div>
+          <div class="route-row__meta">
+            <span><i class="fas fa-clock"></i> 2h30</span>
+            <span><i class="fas fa-road"></i> 240 km</span>
+          </div>
+          <div class="route-row__prices">
+            <span class="route-row__price"><span class="route-row__label">Sedan</span> €130</span>
+            <span class="route-row__price"><span class="route-row__label">SUV</span> €130</span>
+            <span class="route-row__price"><span class="route-row__label">Minivan</span> <a href="#" class="js-open-modal" style="color: var(--cta); font-weight: 600; font-size: 12px;">On request</a></span>
+          </div>
+          <a href="#" class="route-row__book btn btn--primary btn--sm js-open-modal">Book</a>
+        </div>
+        <div class="route-row animate-fade-up">
+          <div class="route-row__route">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Marrakech</span>
+            <i class="fas fa-arrows-alt-h"></i>
+            <span>Casablanca Aéroport</span>
+          </div>
+          <div class="route-row__meta">
+            <span><i class="fas fa-clock"></i> 2h30</span>
+            <span><i class="fas fa-road"></i> 240 km</span>
+          </div>
+          <div class="route-row__prices">
+            <span class="route-row__price"><span class="route-row__label">Sedan</span> €120</span>
+            <span class="route-row__price"><span class="route-row__label">SUV</span> €130</span>
+            <span class="route-row__price"><span class="route-row__label">Minivan</span> <a href="#" class="js-open-modal" style="color: var(--cta); font-weight: 600; font-size: 12px;">On request</a></span>
+          </div>
+          <a href="#" class="route-row__book btn btn--primary btn--sm js-open-modal">Book</a>
+        </div>
+        <div class="route-row animate-fade-up">
+          <div class="route-row__route">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Marrakech Aéroport</span>
+            <i class="fas fa-arrows-alt-h"></i>
+            <span>Essaouira</span>
+          </div>
+          <div class="route-row__meta">
+            <span><i class="fas fa-clock"></i> 2h30</span>
+            <span><i class="fas fa-road"></i> 175 km</span>
+          </div>
+          <div class="route-row__prices">
+            <span class="route-row__price"><span class="route-row__label">Sedan</span> €60</span>
+            <span class="route-row__price"><span class="route-row__label">SUV</span> €100</span>
+            <span class="route-row__price"><span class="route-row__label">Minivan</span> <a href="#" class="js-open-modal" style="color: var(--cta); font-weight: 600; font-size: 12px;">On request</a></span>
+          </div>
+          <a href="#" class="route-row__book btn btn--primary btn--sm js-open-modal">Book</a>
+        </div>
+        <div class="route-row animate-fade-up">
+          <div class="route-row__route">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Marrakech</span>
+            <i class="fas fa-arrows-alt-h"></i>
+            <span>Essaouira</span>
+          </div>
+          <div class="route-row__meta">
+            <span><i class="fas fa-clock"></i> 2h30</span>
+            <span><i class="fas fa-road"></i> 175 km</span>
+          </div>
+          <div class="route-row__prices">
+            <span class="route-row__price"><span class="route-row__label">Sedan</span> €55</span>
+            <span class="route-row__price"><span class="route-row__label">SUV</span> €100</span>
+            <span class="route-row__price"><span class="route-row__label">Minivan</span> <a href="#" class="js-open-modal" style="color: var(--cta); font-weight: 600; font-size: 12px;">On request</a></span>
+          </div>
+          <a href="#" class="route-row__book btn btn--primary btn--sm js-open-modal">Book</a>
+        </div>
+        <div class="route-row animate-fade-up">
+          <div class="route-row__route">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Essaouira</span>
+            <i class="fas fa-arrows-alt-h"></i>
+            <span>Marrakech</span>
+          </div>
+          <div class="route-row__meta">
+            <span><i class="fas fa-clock"></i> 2h30</span>
+            <span><i class="fas fa-road"></i> 175 km</span>
+          </div>
+          <div class="route-row__prices">
+            <span class="route-row__price"><span class="route-row__label">Sedan</span> €60</span>
+            <span class="route-row__price"><span class="route-row__label">SUV</span> €100</span>
+            <span class="route-row__price"><span class="route-row__label">Minivan</span> <a href="#" class="js-open-modal" style="color: var(--cta); font-weight: 600; font-size: 12px;">On request</a></span>
+          </div>
+          <a href="#" class="route-row__book btn btn--primary btn--sm js-open-modal">Book</a>
+        </div>
+        <div class="route-row animate-fade-up">
+          <div class="route-row__route">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Marrakech</span>
+            <i class="fas fa-arrows-alt-h"></i>
+            <span>Essaouira Aéroport</span>
+          </div>
+          <div class="route-row__meta">
+            <span><i class="fas fa-clock"></i> 2h30</span>
+            <span><i class="fas fa-road"></i> 175 km</span>
+          </div>
+          <div class="route-row__prices">
+            <span class="route-row__price"><span class="route-row__label">Sedan</span> €60</span>
+            <span class="route-row__price"><span class="route-row__label">SUV</span> €100</span>
+            <span class="route-row__price"><span class="route-row__label">Minivan</span> <a href="#" class="js-open-modal" style="color: var(--cta); font-weight: 600; font-size: 12px;">On request</a></span>
+          </div>
+          <a href="#" class="route-row__book btn btn--primary btn--sm js-open-modal">Book</a>
+        </div>
+        <div class="route-row animate-fade-up">
+          <div class="route-row__route">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Marrakech</span>
+            <i class="fas fa-arrows-alt-h"></i>
+            <span>Agadir Aéroport</span>
+          </div>
+          <div class="route-row__meta">
+            <span><i class="fas fa-clock"></i> 2h30</span>
+            <span><i class="fas fa-road"></i> 200 km</span>
+          </div>
+          <div class="route-row__prices">
+            <span class="route-row__price"><span class="route-row__label">Sedan</span> €120</span>
+            <span class="route-row__price"><span class="route-row__label">SUV</span> €130</span>
+            <span class="route-row__price"><span class="route-row__label">Minivan</span> <a href="#" class="js-open-modal" style="color: var(--cta); font-weight: 600; font-size: 12px;">On request</a></span>
+          </div>
+          <a href="#" class="route-row__book btn btn--primary btn--sm js-open-modal">Book</a>
+        </div>
+        <div class="route-row animate-fade-up">
+          <div class="route-row__route">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Marrakech Aéroport</span>
+            <i class="fas fa-arrows-alt-h"></i>
+            <span>Agadir</span>
+          </div>
+          <div class="route-row__meta">
+            <span><i class="fas fa-clock"></i> 2h30</span>
+            <span><i class="fas fa-road"></i> 200 km</span>
+          </div>
+          <div class="route-row__prices">
+            <span class="route-row__price"><span class="route-row__label">Sedan</span> €110</span>
+            <span class="route-row__price"><span class="route-row__label">SUV</span> €130</span>
+            <span class="route-row__price"><span class="route-row__label">Minivan</span> <a href="#" class="js-open-modal" style="color: var(--cta); font-weight: 600; font-size: 12px;">On request</a></span>
+          </div>
+          <a href="#" class="route-row__book btn btn--primary btn--sm js-open-modal">Book</a>
+        </div>
+        <div class="route-row animate-fade-up">
+          <div class="route-row__route">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Marrakech</span>
+            <i class="fas fa-arrows-alt-h"></i>
+            <span>Taghazout</span>
+          </div>
+          <div class="route-row__meta">
+            <span><i class="fas fa-clock"></i> 2h45</span>
+            <span><i class="fas fa-road"></i> 210 km</span>
+          </div>
+          <div class="route-row__prices">
+            <span class="route-row__price"><span class="route-row__label">Sedan</span> €130</span>
+            <span class="route-row__price"><span class="route-row__label">SUV</span> €140</span>
+            <span class="route-row__price"><span class="route-row__label">Minivan</span> <a href="#" class="js-open-modal" style="color: var(--cta); font-weight: 600; font-size: 12px;">On request</a></span>
+          </div>
+          <a href="#" class="route-row__book btn btn--primary btn--sm js-open-modal">Book</a>
+        </div>
+        <div class="route-row animate-fade-up">
+          <div class="route-row__route">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Marrakech Aéroport</span>
+            <i class="fas fa-arrows-alt-h"></i>
+            <span>Taghazout</span>
+          </div>
+          <div class="route-row__meta">
+            <span><i class="fas fa-clock"></i> 2h45</span>
+            <span><i class="fas fa-road"></i> 210 km</span>
+          </div>
+          <div class="route-row__prices">
+            <span class="route-row__price"><span class="route-row__label">Sedan</span> €130</span>
+            <span class="route-row__price"><span class="route-row__label">SUV</span> €140</span>
+            <span class="route-row__price"><span class="route-row__label">Minivan</span> <a href="#" class="js-open-modal" style="color: var(--cta); font-weight: 600; font-size: 12px;">On request</a></span>
+          </div>
+          <a href="#" class="route-row__book btn btn--primary btn--sm js-open-modal">Book</a>
+        </div>
+        <div class="route-row animate-fade-up">
+          <div class="route-row__route">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Marrakech</span>
+            <i class="fas fa-arrows-alt-h"></i>
+            <span>Imlil</span>
+          </div>
+          <div class="route-row__meta">
+            <span><i class="fas fa-clock"></i> 1h30</span>
+            <span><i class="fas fa-road"></i> 65 km</span>
+          </div>
+          <div class="route-row__prices">
+            <span class="route-row__price"><span class="route-row__label">Sedan</span> €60</span>
+            <span class="route-row__price"><span class="route-row__label">SUV</span> €80</span>
+            <span class="route-row__price"><span class="route-row__label">Minivan</span> <a href="#" class="js-open-modal" style="color: var(--cta); font-weight: 600; font-size: 12px;">On request</a></span>
+          </div>
+          <a href="#" class="route-row__book btn btn--primary btn--sm js-open-modal">Book</a>
+        </div>
+        <div class="route-row animate-fade-up">
+          <div class="route-row__route">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Essaouira</span>
+            <i class="fas fa-arrows-alt-h"></i>
+            <span>Casablanca Ville</span>
+          </div>
+          <div class="route-row__meta">
+            <span><i class="fas fa-clock"></i> 3h30</span>
+            <span><i class="fas fa-road"></i> 340 km</span>
+          </div>
+          <div class="route-row__prices">
+            <span class="route-row__price"><span class="route-row__label">Sedan</span> €170</span>
+            <span class="route-row__price"><span class="route-row__label">SUV</span> €190</span>
+            <span class="route-row__price"><span class="route-row__label">Minivan</span> <a href="#" class="js-open-modal" style="color: var(--cta); font-weight: 600; font-size: 12px;">On request</a></span>
+          </div>
+          <a href="#" class="route-row__book btn btn--primary btn--sm js-open-modal">Book</a>
+        </div>
+        <div class="route-row animate-fade-up">
+          <div class="route-row__route">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Essaouira</span>
+            <i class="fas fa-arrows-alt-h"></i>
+            <span>Casablanca Aéroport</span>
+          </div>
+          <div class="route-row__meta">
+            <span><i class="fas fa-clock"></i> 3h30</span>
+            <span><i class="fas fa-road"></i> 340 km</span>
+          </div>
+          <div class="route-row__prices">
+            <span class="route-row__price"><span class="route-row__label">Sedan</span> €150</span>
+            <span class="route-row__price"><span class="route-row__label">SUV</span> €170</span>
+            <span class="route-row__price"><span class="route-row__label">Minivan</span> <a href="#" class="js-open-modal" style="color: var(--cta); font-weight: 600; font-size: 12px;">On request</a></span>
+          </div>
+          <a href="#" class="route-row__book btn btn--primary btn--sm js-open-modal">Book</a>
+        </div>
+        <div class="route-row animate-fade-up">
+          <div class="route-row__route">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Essaouira</span>
+            <i class="fas fa-arrows-alt-h"></i>
+            <span>Agadir Aéroport</span>
+          </div>
+          <div class="route-row__meta">
+            <span><i class="fas fa-clock"></i> 2h00</span>
+            <span><i class="fas fa-road"></i> 130 km</span>
+          </div>
+          <div class="route-row__prices">
+            <span class="route-row__price"><span class="route-row__label">Sedan</span> €80</span>
+            <span class="route-row__price"><span class="route-row__label">SUV</span> €100</span>
+            <span class="route-row__price"><span class="route-row__label">Minivan</span> <a href="#" class="js-open-modal" style="color: var(--cta); font-weight: 600; font-size: 12px;">On request</a></span>
+          </div>
+          <a href="#" class="route-row__book btn btn--primary btn--sm js-open-modal">Book</a>
+        </div>
+        <div class="route-row animate-fade-up" style="border-color: var(--cta); background: rgba(255,138,0,.08); justify-content: center;">
+          <a href="#" class="btn btn--primary btn--sm js-open-modal" style="padding: 10px 24px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .5px;">Autre Trajet → Demander un devis</a>
         </div>
       </div>
     </div>
