@@ -259,3 +259,70 @@ html[dir="rtl"] body { font-family: var(--font-arabic); }
 
 .animate-fade-up { opacity: 0; transform: translateY(30px); transition: opacity .6s ease, transform .6s ease; }
 .animate-fade-up.visible { opacity: 1; transform: translateY(0); }
+
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 2000;
+  background: rgba(0,0,0,.6); backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden; transition: var(--transition);
+  padding: 20px; overflow-y: auto;
+}
+.modal-overlay.active {
+  opacity: 1; visibility: visible;
+}
+.modal {
+  background: var(--white); border-radius: var(--radius-lg);
+  padding: 40px; width: 100%; max-width: 700px;
+  max-height: 90vh; overflow-y: auto;
+  position: relative; box-shadow: var(--shadow-xl);
+  transform: translateY(30px) scale(.97);
+  transition: var(--transition);
+}
+.modal-overlay.active .modal {
+  transform: translateY(0) scale(1);
+}
+.modal__close {
+  position: absolute; top: 16px; right: 20px;
+  font-size: 32px; width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gray-400); border-radius: 50%;
+  transition: var(--transition); line-height: 1;
+}
+.modal__close:hover {
+  color: var(--text); background: var(--gray-100);
+}
+html[dir="rtl"] .modal__close {
+  right: auto; left: 20px;
+}
+.modal__steps {
+  display: flex; align-items: center; justify-content: center;
+  gap: 16px; margin-bottom: 28px;
+}
+.modal__step {
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 700; color: var(--gray-400);
+  background: var(--gray-100); transition: var(--transition);
+  flex-shrink: 0;
+}
+.modal__step.active {
+  background: var(--primary); color: var(--white);
+}
+.modal__step.done {
+  background: var(--accent); color: var(--white);
+}
+.modal__step-line {
+  height: 2px; flex: 1; max-width: 80px;
+  background: var(--gray-200); border-radius: 2px;
+  transition: var(--transition);
+}
+.modal__step-line.done {
+  background: var(--accent);
+}
+.modal__step-title {
+  font-size: 17px; font-weight: 700; color: var(--primary);
+  margin-bottom: 20px;
+}
+@media (max-width: 600px) {
+  .modal { padding: 24px; }
+}

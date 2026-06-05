@@ -36,6 +36,8 @@ const translations = {
     act4_title: 'Agadir & Taghazout Coast', act4_desc: 'Beach day on the Atlantic coast. Visit Agadir\'s marina, souk, and surf spots.', act4_dur: 'Full day', act4_people: '1–8 people',
     act5_title: 'Marrakech City Discovery', act5_desc: 'Visit Jemaa el-Fnaa, Bahia Palace, Majorelle Garden, and the vibrant souks.', act5_dur: 'Full day', act5_people: '1–8 people',
     act6_title: 'Moroccan Wine & Food Tour', act6_desc: 'Taste Moroccan cuisine and local wines on a guided culinary tour near Marrakech.', act6_dur: 'Half day', act6_people: '2–8 people',
+    modal_step1_title: 'Trip Details', modal_step2_title: 'Personal Information',
+    modal_next: 'Next Step', modal_prev: 'Back',
     booking_tag: 'Book Online', booking_title: 'Book Your Transfer',
     booking_desc: "Fill in the form below and we'll confirm your booking within minutes. Or simply reach out via WhatsApp.",
     form_name: 'Full Name *', form_phone: 'Phone Number *', form_email: 'Email',
@@ -104,6 +106,8 @@ const translations = {
     act4_title: 'Côte d\'Agadir & Taghazout', act4_desc: 'Journée à la plage sur la côte atlantique. Visite de la marina, souk et spots de surf.', act4_dur: 'Journée complète', act4_people: '1–8 pers.',
     act5_title: 'Découverte de Marrakech', act5_desc: 'Visitez Jemaa el-Fnaa, le Palais Bahia, le Jardin Majorelle et les souks animés.', act5_dur: 'Journée complète', act5_people: '1–8 pers.',
     act6_title: 'Tour Gastronomique', act6_desc: 'Dégustez la cuisine marocaine et les vins locaux lors d\'un tour culinaire près de Marrakech.', act6_dur: 'Demi-journée', act6_people: '2–8 pers.',
+    modal_step1_title: 'Détails du Trajet', modal_step2_title: 'Informations Personnelles',
+    modal_next: 'Suivant', modal_prev: 'Retour',
     booking_tag: 'Réserver', booking_title: 'Réservez Votre Transfert',
     booking_desc: "Remplissez le formulaire et nous confirmons votre réservation en quelques minutes.",
     form_name: 'Nom Complet *', form_phone: 'Téléphone *', form_email: 'Email',
@@ -172,6 +176,8 @@ const translations = {
     act4_title: 'ساحل أكادير وتاغازوت', act4_desc: 'يوم شاطئي على ساحل المحيط الأطلسي. زيارة مارينا أكادير، السوق، وأماكن ركوب الأمواج.', act4_dur: 'يوم كامل', act4_people: '1-8 أشخاص',
     act5_title: 'اكتشاف مراكش', act5_desc: 'قم بزيارة ساحة جامع الفنا، قصر البديع، حديقة ماجوريل، والأسواق النابضة بالحياة.', act5_dur: 'يوم كامل', act5_people: '1-8 أشخاص',
     act6_title: 'جولة الطعام والنبيذ', act6_desc: 'تذوق المأكولات المغربية والنبيذ المحلي في جولة طهي قرب مراكش.', act6_dur: 'نصف يوم', act6_people: '2-8 أشخاص',
+    modal_step1_title: 'تفاصيل الرحلة', modal_step2_title: 'المعلومات الشخصية',
+    modal_next: 'الخطوة التالية', modal_prev: 'رجوع',
     booking_tag: 'احجز عبر الإنترنت', booking_title: 'احجز نقلك',
     booking_desc: 'املأ النموذج أدناه وسنؤكد حجزك في غضون دقائق.',
     form_name: 'الاسم الكامل *', form_phone: 'رقم الهاتف *', form_email: 'البريد الإلكتروني',
@@ -404,7 +410,90 @@ document.getElementById('contactForm')?.addEventListener('submit', function(e) {
 
 // SET MIN DATE
 const dateInput = document.getElementById('bDate');
+const modalDateInput = document.getElementById('modalBDate');
 if (dateInput) {
   const today = new Date().toISOString().split('T')[0];
   dateInput.setAttribute('min', today);
 }
+if (modalDateInput) {
+  const today = new Date().toISOString().split('T')[0];
+  modalDateInput.setAttribute('min', today);
+}
+
+// BOOKING MODAL
+const modal = document.getElementById('bookingModal');
+const modalClose = document.getElementById('modalClose');
+let modalStep = 1;
+
+function openModal(e) {
+  if (e) e.preventDefault();
+  modalStep = 1;
+  showStep(1);
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+}
+function showStep(step) {
+  modalStep = step;
+  document.querySelectorAll('.modal__step-content').forEach(el => {
+    el.style.display = el.dataset.step == step ? '' : 'none';
+  });
+  document.querySelectorAll('.modal__step').forEach(el => {
+    const s = parseInt(el.dataset.step);
+    el.classList.toggle('active', s === step);
+    el.classList.toggle('done', s < step);
+  });
+  document.querySelectorAll('.modal__step-line').forEach(el => {
+    el.classList.toggle('done', step > 1);
+  });
+}
+
+document.querySelectorAll('.js-open-modal').forEach(btn => {
+  btn.addEventListener('click', openModal);
+});
+
+modalClose?.addEventListener('click', closeModal);
+
+modal?.addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' && modal?.classList.contains('active')) closeModal();
+});
+
+document.querySelector('.modal__next')?.addEventListener('click', function() {
+  const form = document.getElementById('modalBookingForm');
+  const step1Fields = form.querySelectorAll('[data-step="1"] [required]');
+  let valid = true;
+  step1Fields.forEach(f => { if (!f.value.trim()) valid = false; });
+  if (!valid) {
+    step1Fields.forEach(f => {
+      if (!f.value.trim()) f.style.borderColor = '#e74c3c';
+      else f.style.borderColor = '';
+    });
+    return;
+  }
+  step1Fields.forEach(f => f.style.borderColor = '');
+  showStep(2);
+});
+
+document.querySelector('.modal__prev')?.addEventListener('click', function() {
+  showStep(1);
+});
+
+// MODAL BOOKING FORM
+document.getElementById('modalBookingForm')?.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const formData = new FormData(this);
+  let msg = 'Hello Askhatir Tours, I would like to book a transfer:\n';
+  formData.forEach((val, key) => { msg += `- ${key}: ${val}\n`; });
+  const waUrl = `https://wa.me/212600000000?text=${encodeURIComponent(msg)}`;
+  window.open(waUrl, '_blank');
+  alert(translations[currentLang]?.booking_success || translations.en.booking_success);
+  this.reset();
+  closeModal();
+});

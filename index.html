@@ -31,7 +31,7 @@
           <li><a href="#routes" data-i18n="nav_routes" class="nav__link">Routes & Pricing</a></li>
           <li><a href="#activities" data-i18n="nav_activities" class="nav__link">Activities</a></li>
           <li><a href="#fleet" data-i18n="nav_fleet" class="nav__link">Fleet</a></li>
-          <li><a href="#booking" data-i18n="nav_booking" class="nav__link">Booking</a></li>
+          <li><a href="#" data-i18n="nav_booking" class="nav__link js-open-modal">Booking</a></li>
           <li><a href="#about" data-i18n="nav_about" class="nav__link">About</a></li>
           <li><a href="#contact" data-i18n="nav_contact" class="nav__link">Contact</a></li>
         </ul>
@@ -63,7 +63,7 @@
           <h1 class="hero__title" data-i18n="hero_title">Private Taxi & Transfers<br><span>in Morocco</span></h1>
           <p class="hero__subtitle" data-i18n="hero_subtitle">Reliable, safe and comfortable transfers across Morocco. Airport transfers, intercity travel and custom tours — available 24/7.</p>
           <div class="hero__buttons">
-            <a href="#booking" class="btn btn--primary" data-i18n="hero_btn_book">Book Now</a>
+            <a href="#" class="btn btn--primary js-open-modal" data-i18n="hero_btn_book">Book Now</a>
             <a href="https://wa.me/212600000000" target="_blank" rel="noopener" class="btn btn--whatsapp">
               <i class="fab fa-whatsapp"></i> <span data-i18n="hero_btn_whatsapp">WhatsApp</span>
             </a>
@@ -163,7 +163,7 @@
             <span class="route-row__price"><span class="route-row__label" data-i18n="vehicle_suv">SUV</span> €90</span>
             <span class="route-row__price"><span class="route-row__label" data-i18n="vehicle_minivan">Minivan</span> €110</span>
           </div>
-          <a href="#booking" class="route-row__book btn btn--primary btn--sm">Book</a>
+          <a href="#" class="route-row__book btn btn--primary btn--sm js-open-modal">Book</a>
         </div>
         <div class="route-row animate-fade-up">
           <div class="route-row__route">
@@ -181,7 +181,7 @@
             <span class="route-row__price"><span class="route-row__label">SUV</span> €80</span>
             <span class="route-row__price"><span class="route-row__label">Minivan</span> €100</span>
           </div>
-          <a href="#booking" class="route-row__book btn btn--primary btn--sm">Book</a>
+          <a href="#" class="route-row__book btn btn--primary btn--sm js-open-modal">Book</a>
         </div>
         <div class="route-row animate-fade-up">
           <div class="route-row__route">
@@ -199,7 +199,7 @@
             <span class="route-row__price"><span class="route-row__label">SUV</span> €100</span>
             <span class="route-row__price"><span class="route-row__label">Minivan</span> €130</span>
           </div>
-          <a href="#booking" class="route-row__book btn btn--primary btn--sm">Book</a>
+          <a href="#" class="route-row__book btn btn--primary btn--sm js-open-modal">Book</a>
         </div>
         <div class="route-row animate-fade-up">
           <div class="route-row__route">
@@ -217,7 +217,7 @@
             <span class="route-row__price"><span class="route-row__label">SUV</span> €30</span>
             <span class="route-row__price"><span class="route-row__label">Minivan</span> €40</span>
           </div>
-          <a href="#booking" class="route-row__book btn btn--primary btn--sm">Book</a>
+          <a href="#" class="route-row__book btn btn--primary btn--sm js-open-modal">Book</a>
         </div>
       </div>
     </div>
@@ -714,6 +714,97 @@
       </div>
     </div>
   </footer>
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal">
+      <button class="modal__close" id="modalClose" aria-label="Close modal">&times;</button>
+      <div class="section__header" style="margin-bottom: 12px;">
+        <span class="section__tag" data-i18n="booking_tag">Book Online</span>
+        <h2 class="section__title" style="font-size: clamp(22px, 3vw, 30px);" data-i18n="booking_title">Book Your Transfer</h2>
+      </div>
+      <div class="modal__steps">
+        <span class="modal__step active" data-step="1">1</span>
+        <span class="modal__step-line"></span>
+        <span class="modal__step" data-step="2">2</span>
+      </div>
+      <form class="booking__form" id="modalBookingForm" style="box-shadow: none; padding: 0;">
+        <div class="modal__step-content" data-step="1">
+          <h3 class="modal__step-title" data-i18n="modal_step1_title">Trip Details</h3>
+          <div class="form__row">
+            <div class="form__group">
+              <label for="modalBPickup" data-i18n="form_pickup">Pickup Location *</label>
+              <input type="text" id="modalBPickup" name="pickup" required placeholder="e.g. Marrakech Airport">
+            </div>
+            <div class="form__group">
+              <label for="modalBDropoff" data-i18n="form_dropoff">Drop-off Location *</label>
+              <input type="text" id="modalBDropoff" name="dropoff" required placeholder="e.g. Essaouira">
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="form__group">
+              <label for="modalBPassengers" data-i18n="form_passengers">Passengers *</label>
+              <select id="modalBPassengers" name="passengers" required>
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+              </select>
+            </div>
+            <div class="form__group">
+              <label for="modalBDate" data-i18n="form_date">Date *</label>
+              <input type="date" id="modalBDate" name="date" required>
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="form__group">
+              <label for="modalBTime" data-i18n="form_time">Time *</label>
+              <input type="time" id="modalBTime" name="time" required>
+            </div>
+            <div class="form__group"></div>
+          </div>
+          <div class="form__actions">
+            <button type="button" class="btn btn--primary btn--full modal__next" data-i18n="modal_next">Next Step</button>
+          </div>
+        </div>
+        <div class="modal__step-content" data-step="2" style="display:none;">
+          <h3 class="modal__step-title" data-i18n="modal_step2_title">Personal Information</h3>
+          <div class="form__row">
+            <div class="form__group">
+              <label for="modalBName" data-i18n="form_name">Full Name *</label>
+              <input type="text" id="modalBName" name="name" required placeholder="Your full name">
+            </div>
+            <div class="form__group">
+              <label for="modalBPhone" data-i18n="form_phone">Phone Number *</label>
+              <input type="tel" id="modalBPhone" name="phone" required placeholder="+212 6XX XXX XXX">
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="form__group">
+              <label for="modalBEmail" data-i18n="form_email">Email</label>
+              <input type="email" id="modalBEmail" name="email" placeholder="your@email.com">
+            </div>
+            <div class="form__group"></div>
+          </div>
+          <div class="form__group">
+            <label for="modalBMessage" data-i18n="form_message">Special Requests</label>
+            <textarea id="modalBMessage" name="message" rows="3" placeholder="Any special requirements..."></textarea>
+          </div>
+          <div class="form__actions">
+            <div style="display:flex;gap:12px;">
+              <button type="button" class="btn btn--whatsapp modal__prev" style="flex:1;" data-i18n="modal_prev">Back</button>
+              <button type="submit" class="btn btn--primary" style="flex:2;" data-i18n="form_submit">Send Booking Request</button>
+            </div>
+            <a href="https://wa.me/212600000000?text=Hello%20Askhatir%20Tours%2C%20I%20would%20like%20to%20book%20a%20transfer." target="_blank" rel="noopener" class="btn btn--whatsapp btn--full" style="margin-top:4px;">
+              <i class="fab fa-whatsapp"></i> <span data-i18n="form_whatsapp">Book via WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
   <script src="js/main.js"></script>
 </body>
 </html>
