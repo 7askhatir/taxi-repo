@@ -287,7 +287,7 @@ html[dir="rtl"] body { font-family: var(--font-arabic); }
 }
 .modal {
   position: relative;
-  width: 100%; max-width: 500px; margin: auto;
+  width: 100%; max-width: 100%; margin: auto;
   background: var(--white);
   border-radius: 20px; padding: 32px;
   box-shadow: 0 25px 60px rgba(0,0,0,.15), 0 8px 20px rgba(0,0,0,.08);
